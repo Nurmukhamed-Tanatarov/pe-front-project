@@ -88,6 +88,9 @@
                             "buildTarget": "fuse:build:development"
                         }
                     },
+                    "options": {
+                        "proxyConfig": "proxy.conf.json"
+                    },
                     "defaultConfiguration": "development"
                 },
                 "extract-i18n": {
@@ -111,5 +114,8 @@
                 }
             }
         }
+    },
+    "cli": {
+      "analytics": "8d446265-627f-402d-99d5-2d953767567b"
     }
 }

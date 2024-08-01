@@ -1,4 +1,5 @@
 const path = require('path');
+const { generate } = require('rxjs');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const generatePalette = require(
@@ -14,7 +15,6 @@ const generatePalette = require(
 const customPalettes = {
     brand: generatePalette('#2196F3'),
 };
-
 /**
  * Themes
  */
@@ -26,8 +26,8 @@ const themes = {
             DEFAULT: colors.indigo[600],
         },
         accent: {
-            ...colors.slate,
-            DEFAULT: colors.slate[800],
+            ...colors.yellow,
+            DEFAULT: colors.yellow[500],
         },
         warn: {
             ...colors.red,
@@ -99,6 +99,7 @@ const config = {
             },
             colors: {
                 gray: colors.slate,
+                customGray: '#2b2a29',
             },
             flex: {
                 0: '0 0 auto',

@@ -57,23 +57,28 @@ export class AuthService {
         if (this._authenticated) {
             return throwError('User is already logged in.');
         }
-
-        return this._httpClient.post('api/auth/sign-in', credentials).pipe(
+    
+        // Using JSON instead of FormData
+        return this._httpClient.post('/gateway/api/s1/auth/sign-in', credentials).pipe(
             switchMap((response: any) => {
                 // Store the access token in the local storage
+                console.log('Received token: ', response.accessToken);
                 this.accessToken = response.accessToken;
-
+                localStorage.setItem('token', response.accessToken);
+                console.log(localStorage);
+    
                 // Set the authenticated flag to true
                 this._authenticated = true;
-
+    
                 // Store the user on the user service
                 this._userService.user = response.user;
-
+    
                 // Return a new observable with the response
                 return of(response);
             })
         );
     }
+    
 
     /**
      * Sign in using the access token
