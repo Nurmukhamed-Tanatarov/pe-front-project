@@ -75,6 +75,10 @@ export class AuthService {
     
                 // Return a new observable with the response
                 return of(response);
+            }),
+            catchError((error) => {
+                console.error('Sign-in failed :', error);
+                return throwError(error);
             })
         );
     }
