@@ -47,6 +47,34 @@ export class AuthService {
         return this._httpClient.post('api/auth/reset-password', password);
     }
 
+    // /**
+    //  * Sign in
+    //  *
+    //  * @param credentials
+    //  */
+    // signIn(credentials: { email: string; password: string }): Observable<any> {
+    //     // Throw error, if the user is already logged in
+    //     if (this._authenticated) {
+    //         return throwError('User is already logged in.');
+    //     }
+
+    //     return this._httpClient.post('api/auth/sign-in', credentials).pipe(
+    //         switchMap((response: any) => {
+    //             // Store the access token in the local storage
+    //             this.accessToken = response.accessToken;
+
+    //             // Set the authenticated flag to true
+    //             this._authenticated = true;
+
+    //             // Store the user on the user service
+    //             this._userService.user = response.user;
+
+    //             // Return a new observable with the response
+    //             return of(response);
+    //         })
+    //     );
+    // }
+
     /**
      * Sign in
      *
