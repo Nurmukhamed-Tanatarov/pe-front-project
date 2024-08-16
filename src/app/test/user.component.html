@@ -1,0 +1,12 @@
+<div *ngIf="error" class="error">
+  {{ error }}
+</div>
+
+<div *ngIf="responseData">
+  <pre>{{ responseData | json }}</pre>
+</div>
+
+<button (click)="createUser()">Send POST Request</button>
+<button (click)="getAllUsers()">Send GET All Request</button>
+<button (click)="getUserByID(userId)">Send GET By ID Request</button>
+<button (click)="updateUser(userId)">Send PUT Request</button>

@@ -33,7 +33,7 @@ import { Subject, takeUntil } from 'rxjs';
         MatDividerModule,
     ],
 })
-export class UserComponent implements OnInit, OnDestroy {
+export class UserAdminComponent implements OnInit, OnDestroy {
     /* eslint-disable @typescript-eslint/naming-convention */
     static ngAcceptInputType_showAvatar: BooleanInput;
     /* eslint-enable @typescript-eslint/naming-convention */

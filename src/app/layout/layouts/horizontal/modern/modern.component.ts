@@ -19,9 +19,9 @@ import { LanguagesComponent } from 'app/layout/common/languages/languages.compon
 // import { QuickChatComponent } from 'app/layout/common/quick-chat/quick-chat.component';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 // import { ShortcutsComponent } from 'app/layout/common/shortcuts/shortcuts.component';
-import { UserComponent } from 'app/layout/common/user/user.component';
+import { UserAdminComponent } from 'app/layout/common/useradmin/user.component';
 import { Subject, takeUntil } from 'rxjs';
-import { TestComponent } from 'app/test/test.component';
+import { UserComponent } from 'app/test/user.component';
 
 @Component({
     selector: 'modern-layout',
@@ -40,16 +40,18 @@ import { TestComponent } from 'app/test/test.component';
         // ShortcutsComponent,
         // MessagesComponent,
         // NotificationsComponent,
-        UserComponent,
+        UserAdminComponent,
         RouterOutlet,
         // QuickChatComponent,
-        TestComponent,
+        UserComponent,
         CommonModule,
     ],
 })
 export class ModernLayoutComponent implements OnInit, OnDestroy {
-    isScreenSmall: boolean;
-    navigation: Navigation;
+    isScreenSmall: boolean = false;
+    navigation: Navigation = {
+        horizontal: [],
+    }; // Инициализация navigation как пустой объект
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**
@@ -69,7 +71,7 @@ export class ModernLayoutComponent implements OnInit, OnDestroy {
 
     /**
      * Getter for current year
-     */
+     */     
     get currentYear(): number {
         return new Date().getFullYear();
     }

@@ -63,12 +63,13 @@ export class NavigationMockApi {
             });
 
             // Fill horizontal navigation children using the default navigation
-            this._horizontalNavigation.forEach((horizontalNavItem) => {
-                this._defaultNavigation.forEach((defaultNavItem) => {
-                    if (defaultNavItem.id === horizontalNavItem.id) {
-                        horizontalNavItem.children = cloneDeep(
-                            defaultNavItem.children
-                        );
+            this._horizontalNavigation.forEach((horizontalNavItem) => 
+                {
+                this._defaultNavigation.forEach((defaultNavItem) => 
+                    {
+                    if (defaultNavItem.id === horizontalNavItem.id) 
+                        {
+                        horizontalNavItem.children = cloneDeep(defaultNavItem.children);
                     }
                 });
             });
